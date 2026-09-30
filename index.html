@@ -16,6 +16,7 @@
             print-color-adjust: exact;
         }
         .print-page { 
+            width: 100%;
             max-width: 600px; 
             margin: 0 auto; 
             border: 4px double #90CAF9; 
@@ -23,6 +24,7 @@
             padding: 25px; 
             background: #FFFFFF;
             box-sizing: border-box;
+            position: relative;
         }
         .title { 
             font-size: 24px; 
@@ -40,7 +42,7 @@
             text-transform: uppercase;
         }
 
-        /* 🐑 Sheep Box Layout */
+        /* 🐑 Top Section: Little Lamb Fluffy Name Box */
         .sheep-name-section {
             display: flex;
             flex-direction: column;
@@ -80,22 +82,42 @@
             font-family: sans-serif;
         }
 
-        /* ❤️ Middle Section: Sacred Heart Frame Layout (Using Inline SVG to Prevent Broken Text Truncation) */
+        /* ❤️ Middle Section: Cross & Flame on Top, Heart Frame with Exact Multi-line Text */
         .prayer-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             margin-bottom: 25px;
             position: relative;
         }
-        .svg-heart-frame {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            filter: drop-shadow(0px 4px 10px rgba(183, 28, 28, 0.15));
+        
+        /* ✝️ Custom Flame and Cross Assembly matching your layout */
+        .sacred-heart-emblems {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: -15px;
+            z-index: 10;
+        }
+        .emblem-cross {
+            font-size: 34px;
+            line-height: 1;
+            margin-bottom: -5px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        .emblem-fire {
+            font-size: 38px;
+            line-height: 1;
         }
 
-        /* 🗓️ Bottom Section: Plain Heart Tracker Grid (Using SVGs for perfect sizing) */
+        .svg-heart-frame {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            filter: drop-shadow(0px 5px 12px rgba(183, 28, 28, 0.12));
+        }
+
+        /* 🗓️ Bottom Section: Plain Heart Tracker Grid Array */
         .tracker-section {
             border-top: 1px dashed #90CAF9;
             padding-top: 20px;
@@ -143,34 +165,37 @@
             </div>
         </div>
 
-        <!-- 🌟 Sacred Heart SVG Viewport Frame Container -->
+        <!-- ❤️ Middle Section: Sacred Heart Frame Layout -->
         <div class="prayer-container">
-            <svg class="svg-heart-frame" viewBox="0 0 500 480" xmlns="http://w3.org">
-                <!-- 👑 Holy Thorns and Cross Crown Elements -->
-                <text x="250" y="55" font-size="34" text-anchor="middle">🔥</text>
-                <text x="250" y="30" font-size="28" text-anchor="middle">✝️</text>
-                
-                <!-- ❤️ Flawless Sacred Devotional Heart Curve Geometry Path -->
-                <path d="M250,450 C250,450 40,290 40,170 C40,90 110,60 190,100 C220,120 250,150 250,150 C250,150 280,120 310,100 C390,60 460,90 460,170 C460,290 250,450 250,450 Z" 
-                      fill="#FFF5F5" stroke="#FF8A80" stroke-width="4"/>
+            <!-- Emblems sit perfectly anchored on top of the heart vertex -->
+            <div class="sacred-heart-emblems">
+                <div class="emblem-cross">✝️</div>
+                <div class="emblem-fire">🔥</div>
+            </div>
+            
+            <svg class="svg-heart-frame" viewBox="0 0 500 440" xmlns="http://w3.org">
+                <!-- Flawless Sacred Heart Curve Geometry Path -->
+                <path d="M250,420 C250,450 40,270 40,150 C40,70 110,40 190,80 C220,100 250,130 250,130 C250,130 280,100 310,80 C390,40 460,70 460,150 C460,270 250,420 250,420 Z" 
+                      fill="#FFF5F5" stroke="#FF8A80" stroke-width="4.5"/>
 
-                <!-- 📜 Multi-line Auto-wrapped Prayer Text Content Block Grid Matrix -->
-                <g font-family="Georgia, serif" font-size="12.5" font-weight="500" fill="#212121" text-anchor="middle">
-                    <text x="250" y="150" font-size="15" font-weight="900" fill="#B71C1C">SACRED HEART OF JESUS</text>
+                <!-- 📜 Multi-line Auto-wrapped Prayer Text Content Block -->
+                <g font-family="Georgia, serif" font-size="13" font-weight="500" fill="#212121" text-anchor="middle">
+                    <text x="250" y="130" font-size="15" font-weight="900" fill="#B71C1C" letter-spacing="0.5">SACRED HEART OF JESUS</text>
                     
-                    <text x="250" y="175">Most Sacred Heart of Jesus, truly present in the Holy</text>
-                    <text x="250" y="195">Eucharist, I consecrate my body and soul to be entirely</text>
-                    <text x="250" y="215">one with Your heart, being sacrificed at every instant</text>
-                    <text x="250" y="235">on all the altars of the world and giving praise to</text>
-                    <text x="250" y="255">the Father pleading for the coming of His Kingdom.</text>
+                    <text x="250" y="155">Most Sacred Heart of Jesus, truly present in the Holy</text>
+                    <text x="250" y="175">Eucharist, I consecrate my body and soul to be entirely</text>
+                    <text x="250" y="195">one with Your heart, being sacrificed at every instant</text>
+                    <text x="250" y="215">on all the altars of the world and giving praise to</text>
+                    <text x="250" y="235">the Father pleading for the coming of His Kingdom.</text>
                     
-                    <text x="250" y="285">Please receive this humble offering of myself. Use me</text>
-                    <text x="250" y="305">as You will for the glory of the Father and salvation of</text>
-                    <text x="250" y="325">souls. Most Holy Mother of God, never let me be</text>
-                    <text x="250" y="345">separated from Your Divine Son. Please defend and</text>
-                    <text x="250" y="365">protect me as Your special child. Amen.</text>
+                    <text x="250" y="265">Please receive this humble offering of myself. Use me</text>
+                    <text x="250" y="285">as You will for the glory of the Father and salvation of</text>
+                    <text x="250" y="305">souls. Most Holy Mother of God, never let me be</text>
+                    <text x="250" y="325">separated from Your Divine Son. Please defend and</text>
+                    <text x="250" y="345">protect me as Your special child. Amen.</text>
                     
-                    <text x="250" y="400" font-size="11" font-weight="bold" fill="#757575">(By Sr. Agnes Sasagawa - Akita)</text>
+                    <text x="250" y="380" font-size="11.5" font-weight="bold" fill="#555555">(By Sr. Agnes Sasagawa - Akita)</text>
+                    <text x="250" y="400" font-size="12" font-weight="bold" fill="#B71C1C" letter-spacing="1">••• Praying Is Loving •••</text>
                 </g>
             </svg>
         </div>
@@ -179,13 +204,13 @@
             <div class="tracker-title">My Weekly Recitation Tracker (Color a heart each time you pray!)</div>
             <div class="hearts-row">
                 <!-- 7 Sharp SVG Hearts Matrix Layout -->
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
-                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
+                <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
             </div>
         </div>
     </div>
