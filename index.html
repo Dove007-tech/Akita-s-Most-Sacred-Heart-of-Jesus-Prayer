@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Heart of Jesus Prayer Printout</title>
+    <style>
+        /* Base page styling optimized for standard A4/Letter print paper sizes */
+        body { 
+            font-family: "Georgia", serif; 
+            background-color: #FFFFFF; 
+            color: #0D47A1; 
+            margin: 0; 
+            padding: 40px 20px; 
+            text-align: center; 
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        .print-page { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            border: 4px double #90CAF9; 
+            border-radius: 24px; 
+            padding: 30px; 
+            background: #FFFFFF;
+            position: relative;
+        }
+        
+        /* Decorative corner flourishes for the page border */
+        .print-page::before {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+        }
+        .print-page::after {
+            content: "✨";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+
+        .title { 
+            font-size: 26px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin-bottom: 5px; 
+            color: #0D47A1;
+            letter-spacing: 0.5px;
+        }
+        .subtitle {
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: #1565C0;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* 🐑 Top Section: Hand-drawn style Sheep Box for name entry */
+        .sheep-name-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+        .name-label {
+            font-size: 13px;
+            font-family: sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #1565C0;
+        }
+        .sheep-box {
+            width: 260px;
+            height: 90px;
+            background: #FFFFFF;
+            border: 3px dashed #90CAF9;
+            /* Crafted cloud-like border radius corners to mimic a sheep's fluffy body outline */
+            border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(13, 71, 161, 0.05);
+        }
+        /* Sheep Head layout flourish */
+        .sheep-box::before {
+            content: "🐑";
+            position: absolute;
+            left: -20px;
+            top: 22px;
+            font-size: 38px;
+        }
+        /* Sheep Tail layout flourish */
+        .sheep-box::after {
+            content: "☁️";
+            position: absolute;
+            right: -10px;
+            top: 30px;
+            font-size: 18px;
+            opacity: 0.5;
+        }
+        .write-here-text {
+            font-size: 12px;
+            color: #90CAF9;
+            font-style: italic;
+            font-family: sans-serif;
+        }
+
+        /* ❤️ Middle Section: Elegant large heart containing the prayer text */
+        .prayer-heart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .prayer-heart {
+            width: 440px;
+            height: 410px;
+            background: #FFF5F5;
+            border: 3px solid #FF8A80;
+            /* Pure CSS custom shape mapping a beautifully proportioned devotional heart frame */
+            border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+            transform: rotate(-45deg);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(244, 67, 54, 0.08);
+        }
+        /* Second half matching loop mirroring the heart structure shape coordinates */
+        .prayer-heart::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #FFF5F5;
+            border: 3px solid #FF8A80;
+            border-radius: 0 0 50% 50% / 0 0 40% 40%;
+            left: -3px;
+            top: -3px;
+            transform: rotate(90deg);
+            transform-origin: 100% 100%;
+            z-index: 1;
+            border-bottom: none;
+            border-left: none;
+        }
+        /* Embedded core text panel container rotated counter-clockwise to match orientation rules */
+        .heart-text-content {
+            transform: rotate(45deg);
+            z-index: 5;
+            width: 290px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: -10px;
+        }
+        .heart-text-content h2 {
+            font-size: 15px;
+            color: #B71C1C;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .heart-text-content p {
+            font-size: 13px;
+            color: #212121;
+            margin: 0;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+            font-weight: 500;
+        }
+
+        /* 🗓️ Bottom Section: 7 connected heart tracker boxes for weekly accountability logs */
+        .tracker-section {
+            margin-top: 20px;
+            border-top: 1px dashed #90CAF9;
+            padding-top: 25px;
+        }
+        .tracker-title {
+            font-size: 13px;
+            font-family: sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #1565C0;
+            letter-spacing: 0.5px;
+        }
+        .hearts-row {
+            display: flex;
+            justify-content: space-between;
+            max-width: 580px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        .day-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 65px;
+        }
+        .day-name {
+            font-size: 11px;
+            font-family: sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-top: 10px;
+            color: #1565C0;
+        }
+        
+        /* Tiny child-friendly custom heart check-off boxes */
+        .mini-tracker-heart {
+            width: 44px;
+            height: 44px;
+            background: #FFFFFF;
+            border: 2px solid #FF8A80;
+            border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+            transform: rotate(-45deg);
+            position: relative;
+            margin-bottom: 5px;
+        }
+        .mini-tracker-heart::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #FFFFFF;
+            border: 2px solid #FF8A80;
+            border-radius: 0 0 50% 50% / 0 0 40% 40%;
+            left: -2px;
+            top: -2px;
+            transform: rotate(90deg);
+            transform-origin: 100% 100%;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        /* Print execution properties hiding interactive action buttons on paper */
+        .no-print-zone {
+            margin-top: 35px;
+        }
+        .print-btn {
+            background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            color: #FFFFFF;
+            border: 3px solid #FFFFFF;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-family: sans-serif;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s;
+        }
+        .print-btn:hover { transform: scale(1.02); }
+
+        @media print {
+            body { padding: 0; background: #FFFFFF; }
+            .print-page { border: none; padding: 10px; }
+            .no-print-zone { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-page">
+        <!-- Dashboard Panel Frame -->
+        <h1 class="title">My Prayer Covenant</h1>
+        <div class="subtitle">Weekly Devotional Tracker</div>
+
+        <!-- 🐑 Top Section: Cloud-shaped Sheep Box for Name -->
+        <div class="sheep-name-section">
+            <div class="name-label">Little Lamb Name:</div>
+            <div class="sheep-box">
+                <span class="write-here-text">(Write your name here)</span>
+            </div>
+        </div>
+
+        <!-- ❤️ Middle Section: Sacred Heart Akita Prayer Box -->
+        <div class="prayer-heart-container">
+            <div class="prayer-heart">
+                <div class="heart-text-content">
+                    <h2>Sacred Heart of Jesus</h2>
+                    <p>Most Sacred Heart of Jesus, truly present in the Holy Eucharist, I consecrate my body and soul to be entirely one with Your Heart, being sacrificed at every instant on all the altars of the world and giving praise to the Father, pleading for the coming of His Kingdom. Amen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🗓️ Bottom Section: 7 Days Heart Checkbox Matrix Layout -->
+        <div class="tracker-section">
+            <div class="tracker-title">My Weekly Recitation Tracker (Color a heart each time you pray!)</div>
+            <div class="hearts-row">
+                <div class="day-column">
+                    <div class="mini-tracker-heart"></div>
+                    <div class="day-name">Sun</div>
