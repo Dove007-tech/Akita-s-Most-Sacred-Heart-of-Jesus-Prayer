@@ -82,21 +82,28 @@
             font-family: sans-serif;
         }
 
-        /* ❤️ Middle Section: Cross & Flame on Top, Heart Frame with Exact Multi-line Text */
+        /* 🟥 Middle Section: Expanded Clear Prayer Card with Soft Red/Rose Background */
         .prayer-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-bottom: 25px;
             position: relative;
+            background-color: #FFF5F5;
+            border: 3px solid #FF8A80;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0px 5px 12px rgba(183, 28, 28, 0.05);
+            box-sizing: border-box;
         }
         
-        /* ✝️ Custom Flame and Cross Assembly matching your layout */
+        /* ✝️ Custom Flame and Cross Assembly anchored at the top of the card */
         .sacred-heart-emblems {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: -15px;
+            margin-top: -50px;
+            margin-bottom: 15px;
             z-index: 10;
         }
         .emblem-cross {
@@ -110,11 +117,36 @@
             line-height: 1;
         }
 
-        .svg-heart-frame {
-            width: 100%;
-            max-width: 520px;
-            height: auto;
-            filter: drop-shadow(0px 5px 12px rgba(183, 28, 28, 0.12));
+        /* Pure Typography Layout formatting for clean printing alignment */
+        .prayer-heading {
+            font-size: 16px;
+            font-weight: 900;
+            color: #B71C1C;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0 0 15px 0;
+        }
+        .prayer-paragraph {
+            font-size: 14px;
+            color: #212121;
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+            text-align: justify;
+            font-weight: 500;
+        }
+        .prayer-footer {
+            font-size: 12px;
+            font-weight: bold;
+            color: #555555;
+            margin-bottom: 15px;
+        }
+        .loving-inscription {
+            font-size: 13px;
+            font-weight: bold;
+            color: #B71C1C;
+            letter-spacing: 1px;
+            margin: 0;
+            text-transform: uppercase;
         }
 
         /* 🗓️ Bottom Section: Plain Heart Tracker Grid Array */
@@ -165,45 +197,27 @@
             </div>
         </div>
 
-        <!-- ❤️ Middle Section: Sacred Heart Frame Layout -->
+        <!-- ❤️ Middle Section: Open Card Layout with Soft Rose-Pink Background Background -->
         <div class="prayer-container">
-            <!-- Emblems sit perfectly anchored on top of the heart vertex -->
             <div class="sacred-heart-emblems">
                 <div class="emblem-cross">✝️</div>
                 <div class="emblem-fire">🔥</div>
             </div>
             
-            <svg class="svg-heart-frame" viewBox="0 0 500 440" xmlns="http://w3.org">
-                <!-- Flawless Sacred Heart Curve Geometry Path -->
-                <path d="M250,420 C250,450 40,270 40,150 C40,70 110,40 190,80 C220,100 250,130 250,130 C250,130 280,100 310,80 C390,40 460,70 460,150 C460,270 250,420 250,420 Z" 
-                      fill="#FFF5F5" stroke="#FF8A80" stroke-width="4.5"/>
-
-                <!-- 📜 Multi-line Auto-wrapped Prayer Text Content Block -->
-                <g font-family="Georgia, serif" font-size="13" font-weight="500" fill="#212121" text-anchor="middle">
-                    <text x="250" y="130" font-size="15" font-weight="900" fill="#B71C1C" letter-spacing="0.5">SACRED HEART OF JESUS</text>
-                    
-                    <text x="250" y="155">Most Sacred Heart of Jesus, truly present in the Holy</text>
-                    <text x="250" y="175">Eucharist, I consecrate my body and soul to be entirely</text>
-                    <text x="250" y="195">one with Your heart, being sacrificed at every instant</text>
-                    <text x="250" y="215">on all the altars of the world and giving praise to</text>
-                    <text x="250" y="235">the Father pleading for the coming of His Kingdom.</text>
-                    
-                    <text x="250" y="265">Please receive this humble offering of myself. Use me</text>
-                    <text x="250" y="285">as You will for the glory of the Father and salvation of</text>
-                    <text x="250" y="305">souls. Most Holy Mother of God, never let me be</text>
-                    <text x="250" y="325">separated from Your Divine Son. Please defend and</text>
-                    <text x="250" y="345">protect me as Your special child. Amen.</text>
-                    
-                    <text x="250" y="380" font-size="11.5" font-weight="bold" fill="#555555">(By Sr. Agnes Sasagawa - Akita)</text>
-                    <text x="250" y="400" font-size="12" font-weight="bold" fill="#B71C1C" letter-spacing="1">••• Praying Is Loving •••</text>
-                </g>
-            </svg>
+            <h2 class="prayer-heading">SACRED HEART OF JESUS</h2>
+            
+            <p class="prayer-paragraph">Most Sacred Heart of Jesus, truly present in the Holy Eucharist, I consecrate my body and soul to be entirely one with Your heart, being sacrificed at every instant on all the altars of the world and giving praise to the Father pleading for the coming of His Kingdom.</p>
+            
+            <p class="prayer-paragraph">Please receive this humble offering of myself. Use me as You will for the glory of the Father and salvation of souls. Most Holy Mother of God, never let me be separated from Your Divine Son. Please defend and protect me as Your special child. Amen.</p>
+            
+            <div class="prayer-footer">(By Sr. Agnes Sasagawa - Akita)</div>
+            <div class="loving-inscription">••• Praying Is Loving •••</div>
         </div>
 
         <div class="tracker-section">
             <div class="tracker-title">My Weekly Recitation Tracker (Color a heart each time you pray!)</div>
             <div class="hearts-row">
-                <!-- 7 Sharp SVG Hearts Matrix Layout -->
+                <!-- 7 Sharp SVG Hearts Matrix Layout Layout -->
                 <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
                 <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
                 <svg class="svg-mini-heart" viewBox="0 0 32 32"><path d="M16,28 C16,28 2,18 2,10 C2,5 6,3 11,6 C13,7 16,10 16,10 C16,10 19,7 21,6 C26,3 30,5 30,10 C30,18 16,28 16,28 Z" fill="#FFFFFF" stroke="#FF8A80" stroke-width="2.5"/></svg>
